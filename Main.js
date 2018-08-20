@@ -11,7 +11,7 @@
 	DTKGStorage.FloatingStorage.Cells["b"].top = 64;
 	DTKGStorage.RenderAll();
 	DTKGStorage.LoadImage("testImage","https://78.media.tumblr.com/7e6a705d3c5c1f79e3947eb4e20558bb/tumblr_mgaihyVLKq1qcye5fo1_540.jpg","FullImage");
-	DTKGStorage.LoadImage("testImage2","http://moziru.com/images/drawn-grass-sprite-sheet-11.png","SpriteSheet"); //this is a test and should be a diffrent image later
+	DTKGStorage.LoadImage("testImage2","https://78.media.tumblr.com/7e6a705d3c5c1f79e3947eb4e20558bb/tumblr_mgaihyVLKq1qcye5fo1_540.jpg","SpriteSheet"); //this is a test and should be a diffrent image later
 	InputHandler.Init("bCanvas");
 	//below var for image test
 	var canvas  = document.getElementById("bCanvas");
