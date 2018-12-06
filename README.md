@@ -11,6 +11,8 @@ Main.js is that init the other three and get everything working right.
 
 TextIndext.html is a testing file for above. 
 
+DTKSlideshow.js is a stand alone image slide show.
+
 current todo list:
 -add colision methods
 -design basic object template
