@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 
 
@@ -18,26 +18,53 @@
 </head>
 <body>
 
-<br>
-<button onclick="ButtonType('Text')">Text?</button>
-<button onclick="ButtonType('Rect')">Rect?</button>
-<button onclick="ButtonType('Arc')">Arc?</button>
-<br>
-<button onclick="ButtonStyle('Fill')">Fill?</button>
-<button onclick="ButtonStyle('Stroke')">Stroke?</button>
-<button onclick="ButtonTest()">Test?</button>
+    <br>
+    <button onclick="ButtonType('Text')">Text?</button>
+    <button onclick="ButtonType('Rect')">Rect?</button>
+    <button onclick="ButtonType('Arc')">Arc?</button>
+    <br>
+    <button onclick="ButtonStyle('Fill')">Fill?</button>
+    <button onclick="ButtonStyle('Stroke')">Stroke?</button>
+    <button onclick="ButtonTest()">Test?</button>
+    <br>
+    <input type="color" id="color" value="#008000">
+    <button onclick="ColorTest()">Select color</button>
+    <input type="color" id="strokeColor" value="#ff0000">
+    <button onclick="StrokeColorTest()">Select Stroke color</button>
+    <br>
+    <button onclick="Editor()">ToggleEditor</button>
 
 
-<canvas id="aCanvas" width="480" height="320"></canvas>
-<canvas id="bCanvas" width="480" height="320"></canvas>
 
-		<div id="my_box">
-		<p>Hello World</p>
-		</div>
 
-<script src="CanvasGNGin.js"></script>
-<script src="DTKStorage.js"></script>
-<script src="InputHandler.js"></script>
-<script src="Main.js"></script>
-		
-		
+    <canvas id="DTKMain" width="480" height="320"></canvas>
+    <canvas id="DTKMenu" width="480" height="320"></canvas>
+
+    <div id="eStatus">
+        <p>Editor:false</p>
+    </div>
+    <div id="my_box">
+        <p>Hello World</p>
+    </div>
+
+    <script src="CanvasGNGin.js"></script>
+    <script src="DTKStorage.js"></script>
+    <script src="InputHandler.js"></script>
+    <script src="Main.js"></script>
+    <script src="TestObjects.js"></script>
+	
+	
+	<script src="DTKRPGLibrary.js"></script>
+	<div id="Debug">
+        <p>Debugger</p>
+    </div>
+	<script>
+	//DTKRPGLibrary.AddLevel(-20,DTKRPGLibrary.StatsExample.Primary.Agi);
+	//document.getElementById("Debug").innerHTML = DTKRPGLibrary.CheckExp(DTKRPGLibrary.StatsExample.Primary.Agi);
+	//DTKRPGLibrary.AddStat({ID:"Meow",Name:"Stat.Other.Meow",Type: "Skills",Level: 2, Exp: 100, Group: "Other"},DTKRPGLibrary.StatsExample); //just to have all te checks instead of messing up a force add
+	//document.getElementById("Debug").innerHTML = DTKRPGLibrary.CheckExp(DTKRPGLibrary.StatsExample.Other.Meow);
+	
+	
+	</script>
+
+</body>

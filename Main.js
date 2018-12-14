@@ -1,9 +1,9 @@
 
 
 	
-	CanvasGNGin.Init("aCanvas");
+	CanvasGNGin.Init("DTKMenu");
 	//alert("meow1");
-	
+    //DTKGStorage.Init(CanvasGNGin);
 	//todo move the grid storage stuff to  dtkstrage. init a function in gngin on mouse click or similar function may be needed
 	DTKGStorage.FloatingStorage.Cells["a"] = Object.assign({}, DTKGStorage.renderData);  //ref? copy?
 	DTKGStorage.FloatingStorage.Cells["b"] = Object.create(DTKGStorage.renderData); //should be it own object
@@ -12,21 +12,58 @@
 	DTKGStorage.RenderAll();
 	DTKGStorage.LoadImage("testImage","https://78.media.tumblr.com/7e6a705d3c5c1f79e3947eb4e20558bb/tumblr_mgaihyVLKq1qcye5fo1_540.jpg","FullImage");
 	DTKGStorage.LoadImage("testImage2","https://78.media.tumblr.com/7e6a705d3c5c1f79e3947eb4e20558bb/tumblr_mgaihyVLKq1qcye5fo1_540.jpg","SpriteSheet"); //this is a test and should be a diffrent image later
-	InputHandler.Init("bCanvas");
+    InputHandler.Init("DTKMain", DTKGStorage);
 	//below var for image test
 	var canvas  = document.getElementById("bCanvas");
     var context = canvas.getContext('2d');
+
+    
 	
 	var TempSpite = {type:"sprite",x:2,y:2,w:32,h:32,Img:DTKGStorage.Images.testImage2.Img}; //test for handling sprite location. not sure if the direct cor should be store or the position on grid. the type chould have a function to process it.
 	//above is a simple version of what the rander call for and this need reprocessing as with d cell
 	
+	var isEditor = false;
+	
 	function ButtonType(type)
 	{
 		CanvasGNGin.drawType = type;
+		StatusUpdate();
 	}
 	function ButtonStyle(type)
 	{
 		CanvasGNGin.styleType = type;
+		StatusUpdate();
+	}
+	
+	function Editor()
+	{
+		if (isEditor == false)
+		{
+			isEditor = true;
+		}
+		else
+		{
+			isEditor = false;
+		}
+		StatusUpdate();
+	}
+	
+	function StatusUpdate()
+	{
+		document.getElementById("eStatus").innerHTML = "Editor: " + isEditor + "<br> Draw Type: <font color='" + CanvasGNGin.colorType + "'>" + CanvasGNGin.drawType + "</font><br> Style Type: <font color='" + CanvasGNGin.strokeColorType + "'>"  + CanvasGNGin.styleType + "</font>";
+	}
+	
+	function ColorTest()
+	{
+		
+		CanvasGNGin.colorType = document.querySelector("#color").value;
+		StatusUpdate();
+	}
+	function StrokeColorTest()
+	{
+		
+		CanvasGNGin.strokeColorType = document.querySelector("#strokeColor").value;
+		StatusUpdate();
 	}
 	
 	function ButtonTest() //just testing the image srawing abilities before setting up a fucntion
@@ -46,4 +83,6 @@
 		//todo: images are not being added yet by the new input handler
 		
 	}
+	
+	StatusUpdate();
 
